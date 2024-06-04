@@ -39,6 +39,10 @@
 #endif // MBEDTLS_DEBUG_C
 #endif // QORVO_MBEDTLS_DEBUG
 
-#include "mbedtls/check_config.h"
+#include "mbedtls/version.h"
+#if (MBEDTLS_VERSION_NUMBER < 0x03000000)
+    // Configuration sanity check. Done automatically in Mbed TLS >= 3.0.
+    #include "mbedtls/check_config.h"
+#endif
 
 #endif // QPG7015M_MBEDTLS_CONFIG_H

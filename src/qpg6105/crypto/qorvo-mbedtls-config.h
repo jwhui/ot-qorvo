@@ -34,10 +34,18 @@
 #endif // MBEDTLS_DEBUG_C
 #endif // QORVO_MBEDTLS_DEBUG
 
+<<<<<<< Updated upstream:src/qpg6105/crypto/qorvo-mbedtls-config.h
 // Enables secured CoAP, not used by Thread nor Matter
 #ifndef OPENTHREAD_CONFIG_COAP_SECURE_API_ENABLE
 #define OPENTHREAD_CONFIG_COAP_SECURE_API_ENABLE 0
 #endif // OPENTHREAD_CONFIG_COAP_SECURE_API_ENABLE
+=======
+#include "mbedtls/version.h"
+#if (MBEDTLS_VERSION_NUMBER < 0x03000000)
+    // Configuration sanity check. Done automatically in Mbed TLS >= 3.0.
+    #include "mbedtls/check_config.h"
+#endif
+>>>>>>> Stashed changes:src/qpg6100/crypto/qpg6100-mbedtls-config.h
 
 // Required for SRP client and server and thus in Thread 1.2 and Matter
 #ifndef OPENTHREAD_CONFIG_ECDSA_ENABLE

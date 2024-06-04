@@ -46,4 +46,16 @@
 
 #if OPENTHREAD_CONFIG_JOINER_ENABLE || OPENTHREAD_CONFIG_COMMISSIONER_ENABLE
 #define MBEDTLS_ECJPAKE_ALT
+<<<<<<< Updated upstream
 #endif
+=======
+#define MBEDTLS_SHA256_ALT
+
+#include "mbedtls/version.h"
+#if (MBEDTLS_VERSION_NUMBER < 0x03000000)
+    // Configuration sanity check. Done automatically in Mbed TLS >= 3.0.
+    #include "mbedtls/check_config.h"
+#endif
+
+#endif // QGP6105_MBEDTLS_CONFIG_H
+>>>>>>> Stashed changes
